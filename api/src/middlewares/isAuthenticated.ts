@@ -26,7 +26,7 @@ export function isAuthenticated(
             process.env.JWT_SECRET
         ) as PayLoad;
 
-        request.user_id = sub; // Posso acessar em qualquer rota que tem o middleware passando
+        request.user_id = sub; // Posso acessar em qualquer rota que tem o middleware
 
         return next();
 

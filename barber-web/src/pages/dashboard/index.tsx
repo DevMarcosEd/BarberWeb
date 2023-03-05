@@ -57,6 +57,7 @@ export default function Dashboard({ schedule }: DashboardProps) {
                 }
             })
 
+            // Removendo o item que foi finalizado
             const filterItem = list.filter(item => {
                 return (item?.id !== id)
             })

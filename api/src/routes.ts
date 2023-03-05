@@ -7,7 +7,7 @@ import { DetailUserController } from './controllers/user/DetailUserController';
 import { UpdateUserController } from './controllers/user/UpdateUserController';
 
 // Subscription
-import { CheckSubscriptionController } from './controllers/subscription/CheckSubscriptionController';
+import { CheckSubscriptionController } from './controllers/subscriptions/CheckSubscriptionController';
 
 // Controller HairCut
 import { CreateHaircutController } from './controllers/haircut/CreateHaircutController';
@@ -22,6 +22,7 @@ import { ListScheduleController } from './controllers/schedule/ListScheduleContr
 import { FinishScheduleController } from './controllers/schedule/FinishScheduleController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
+import { SubscribeController } from './controllers/subscribe/SubscribeController';
 
 const router = Router();
 
@@ -66,5 +67,7 @@ router.get('/schedule', isAuthenticated, new ListScheduleController().handle)
 // Delete Schedule
 router.delete('/schedule', isAuthenticated, new FinishScheduleController().handle)
 
+// --- ROUTES PAYMENTS --- //
+router.post('/subscribe', isAuthenticated, new SubscribeController().handle)
 
 export { router };
